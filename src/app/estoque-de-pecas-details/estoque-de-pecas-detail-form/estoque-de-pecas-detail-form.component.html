@@ -1,0 +1,35 @@
+<div class="container">
+  <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="estoqueDePecasId" [value]="service.formData.estoqueDePecasId"/>
+    <div class="form-group">
+      <label>Marca</label>
+      <input class="form-control form-control-lg" placeholder="Full Name" name="Marca" #marca="ngModel"
+        [(ngModel)]="service.formData.marca" required [class.invalid]="marca.invalid && marca.touched">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Modelo</label>
+        <input class="form-control form-control-lg" placeholder="Modelo" name="Modelo" #modelo="ngModel"
+          [(ngModel)]="service.formData.modelo" [class.invalid]="modelo.invalid && modelo.touched">
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <input class="form-control form-control-lg" placeholder="Full Name" name="Tipo" #tipo="ngModel"
+          [(ngModel)]="service.formData.tipo" required [class.invalid]="tipo.invalid && tipo.touched">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Quantidade</label>
+        <input class="form-control form-control-lg" placeholder="Quantidade" name="Quantidade" #quantidade="ngModel"
+          [(ngModel)]="service.formData.quantidade" [class.invalid]="quantidade.invalid && quantidade.touched">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Valor</label>
+        <input class="form-control form-control-lg" placeholder="Valor" name="Valor" #Valor="ngModel"
+          [(ngModel)]="service.formData.valor" [class.invalid]="Valor.invalid && Valor.touched">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+      </div>
+    </div>
+  </form>
+</div>

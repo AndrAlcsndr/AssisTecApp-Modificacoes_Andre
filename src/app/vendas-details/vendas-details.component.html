@@ -1,0 +1,40 @@
+<div class="container-fluid" id="container">
+  <div class="jumbotron py-3 md-5 md-2">
+    <h1 class="display-4 text-center">Vendas</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <app-vendas-detail-form></app-vendas-detail-form>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Tipo de Venda</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Total</th>
+            <th>Deletar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vd of service.list">
+            <td (click)="populateForm(vd)">{{vd.tipoVenda}}</td>
+            <td (click)="populateForm(vd)">{{vd.marca}}</td>
+            <td (click)="populateForm(vd)">{{vd.modelo}}</td>
+            <td (click)="populateForm(vd)">{{vd.produto}}</td>
+            <td (click)="populateForm(vd)">{{vd.quantidade}}</td>
+            <td (click)="populateForm(vd)">{{vd.valor}}</td>
+            <td (click)="populateForm(vd)">{{vd.quantidade*vd.valor}}</td>
+            <td>
+              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(vd.vendasId)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

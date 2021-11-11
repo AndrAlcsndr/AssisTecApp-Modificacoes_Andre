@@ -1,0 +1,96 @@
+<div id="container">
+  <form class="needs-validation" novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="VendasId" [value]="service.formData.vendasId" />
+
+    <div class="col-md-9 mb-6">
+      <label for="validationServer01">Tipo de Venda</label>
+      <input class="form-control needs-validation form-control-lg" id="validationServer01"
+        placeholder="Acessórios ou Componentes" name="TipoVenda" #TipoVenda="ngModel"
+        [(ngModel)]="service.formData.tipoVenda" required maxlength="11" minlength="9"
+        [class.invalid]="TipoVenda.invalid && TipoVenda.touched" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <p></p>
+
+    <div class="col-md-9 mb-6">
+      <label for="validationServer02">Marca</label>
+      <input class="form-control needs-validation form-control-lg" id="validationServer02" placeholder="Marca"
+        name="Marca" #Marca="ngModel" [(ngModel)]="service.formData.marca"
+        [class.invalid]="Marca.invalid && Marca.touched" required minlength="2" maxlength="20">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <p></p>
+
+    <div class="form-row">
+      <p></p>
+      <div class="col-md-6 mb-3">
+        <label for="validationServer03">Modelo</label>
+        <input class="form-control needs-validation form-control-lg" id="validationServer03" placeholder="Modelo"
+          name="Modelo" #Modelo="ngModel" [(ngModel)]="service.formData.modelo"
+          [class.invalid]="Modelo.invalid && Modelo.touched" required minlength="2" maxlength="20">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label for="validationServer04">Produto</label>
+        <input class="form-control needs-validation form-control-lg" id="validationServer04" placeholder="Produto"
+          name="Produto" #Produto="ngModel" [(ngModel)]="service.formData.produto"
+          [class.invalid]="Produto.invalid && Produto.touched" required minlength="1" maxlength="15">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group  col-md-6 mb-3">
+        <label for="validationServer05">Quantidade</label>
+        <input class="form-control needs-validation form-control-lg" id="validationServer05" placeholder="Quantidade"
+          name="Quantidade" id="Quantidade" #Quantidade="ngModel" [(ngModel)]="service.formData.quantidade"
+          [class.invalid]="Quantidade.invalid && Quantidade.touched" required minlength="1" maxlength="3">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group col-md-6 mb-3">
+        <label for="validationServer06">Valor</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">R$</div>
+          </div>
+          <input class="form-control form-control-lg" id="validationServer06" placeholder="Valor" name="Valor"
+            id="Valor" #Valor="ngModel" [(ngModel)]="service.formData.valor"
+            [class.invalid]="Valor.invalid && Valor.touched" required minlength="1" maxlength="7">
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Total</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">R$</div>
+          </div>
+          <input class="form-control form-control-lg" placeholder="Total" name="Total" id="Total" #Total="ngModel"
+            [(ngModel)]="service.formData.quantidade * service.formData.valor"
+            [class.invalid]="Total.invalid && Total.touched" required minlength="1" maxlength="5">
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <button class="btn btn-info btn-lg btn-block" type="submit">SUBMIT</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Cadastro Clientes</h1>
+  </div>
+  <input type="text" class="sm-4" placeholder="Buscar" [(ngModel)]="filtroLista" style="margin-bottom: 10px;">
+        <h3>Filtro: {{filtroLista}}</h3>
+    <hr>
+    <div class="row">
+    <div class="col-md-6">
+      <app-fichaclientes-detail-form></app-fichaclientes-detail-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Defeito</th>
+                    <th>Data</th>
+                    <th>Valor</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="clientes && clientes.length">
+               <tr *ngFor="let cliente of clientesFiltrados">
+                    <td (click)="populateForm(cliente)">{{cliente.nome}}</td>
+                    <td (click)="populateForm(cliente)">{{cliente.endereco}}</td>
+                    <td (click)="populateForm(cliente)">{{cliente.telefone}}</td>
+                    <td (click)="populateForm(cliente)">{{cliente.produto}}</td>
+                    <td (click)="populateForm(cliente)">{{cliente.data}}</td>
+                    <td (click)="populateForm(cliente)">{{cliente.valor}}</td>
+                    <td>
+                      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(cliente.fichaClienteId)"></i>
+                    </td>
+                </tr>
+             </tbody>
+          </table>
+      </div>
+    </div>
+
+</div>

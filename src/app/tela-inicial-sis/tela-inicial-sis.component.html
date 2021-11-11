@@ -1,0 +1,80 @@
+<div class="sidebar">
+  <div class="logo_content" onclick="MyFunction2()">
+    <div class="logo">
+      <i class='bx bx-mobile-alt'></i>
+      <div class="logo_name">Assisteck</div>
+    </div>
+    <i class='bx bx-menu' id="btn"></i>
+  </div>
+  <ul class="nav_list">
+    <li>
+      <i class='bx bx-search' onclick="MyFunction2()"></i>
+      <input type="text" placeholder="Pesquisar">
+      <span class="tooltip">Pesquisar</span>
+    </li>
+    <li>
+      <a href="vendas-details">
+        <i class='bx bx-store-alt'></i>
+        <span class="links_name">Vendas</span>
+      </a>
+      <span class="tooltip">Vendas</span>
+    </li>
+    <li>
+      <a href="estoque-pecas-details">
+        <i class='bx bx-list-ul'></i>
+        <span class="links_name">Lista de Peças</span>
+      </a>
+      <span class="tooltip">Peças</span>
+    </li>
+    <li>
+      <a href="fichaclientes--details">
+        <i class='bx bx-folder'></i>
+        <span class="links_name">Cadastro Clientes</span>
+      </a>
+      <span class="tooltip">Clientes</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-file'></i>
+        <span class="links_name">Lista de Compras</span>
+      </a>
+      <span class="tooltip">Compras</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-calculator'></i>
+        <span class="links_name">Calculadora</span>
+      </a>
+      <span class="tooltip">Calculadora</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-group'></i>
+        <span class="links_name">Administrador</span>
+      </a>
+      <span class="tooltip">Administrador</span>
+    </li>
+  </ul>
+  <div class="profile_content">
+    <div class="profile">
+      <div class="profile_details">
+        <img src="../../assets/img/profile.png" alt="">
+        <div class="Nome_Cargo">
+          <div class="Nome">NomeEmpregado</div>
+          <div class="Cargo">CargoCargo</div>
+        </div>
+      </div>
+      <li>
+        <a id="btn_logout" (click)="logout()">
+          <i class='bx bx-log-out-circle' id="log_out"></i>
+          <span class="links_name"(click)="logout()">Sair</span>
+        </a>
+        <span class="tooltip"(click)="logout()">Sair</span>
+      </li>
+    </div>
+  </div>
+</div>
+
+<div class="home_content">
+  <div class="text">Home Content</div>
+</div>
