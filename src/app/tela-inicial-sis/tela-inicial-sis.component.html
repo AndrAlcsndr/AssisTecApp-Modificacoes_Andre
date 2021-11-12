@@ -13,7 +13,7 @@
       <span class="tooltip">Pesquisar</span>
     </li>
     <li>
-      <a onclick="alteraCampos();">
+      <a href="/vendas-details">
         <i class='bx bx-store-alt'></i>
         <span class="links_name">Vendas</span>
       </a>
@@ -74,12 +74,6 @@
     </div>
   </div>
 </div>
-<div class="container-vendas">
-  <app-vendas-details></app-vendas-details>
-</div>
-<div class="container-Estoque" onclick="" style="display: none">
-  <app-estoque-de-pecas></app-estoque-de-pecas>
-</div>
-<div class="container-ficha-clientes" onclick="" style="display: none">
-  <app-fichaclientes></app-fichaclientes>
+<div class="home_content">
+  <router-outlet></router-outlet>
 </div>

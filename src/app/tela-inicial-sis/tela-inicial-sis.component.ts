@@ -12,7 +12,7 @@ export class TelaIncialComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router)
   {
-
+    this.router = router;
   }
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class TelaIncialComponent implements OnInit {
   logout (){
     this.authService.logout();
     this.router.navigateByUrl('/login');
+
   }
 
 }

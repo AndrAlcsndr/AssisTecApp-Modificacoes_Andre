@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { FichaclientesDetailFormComponent } from './fichaclientes-details/fichac
 import { EstoqueDePecasDetailsComponent } from './estoque-de-pecas-details/estoque-de-pecas-details.component';
 import { EstoqueDePecasDetailFormComponent } from './estoque-de-pecas-details/estoque-de-pecas-detail-form/estoque-de-pecas-detail-form.component';
 import { VendasDetailFormComponent } from './vendas-details/vendas-detail-form/vendas-detail-form.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -50,6 +52,7 @@ import { VendasDetailFormComponent } from './vendas-details/vendas-detail-form/v
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot()
+
 
   ],
   providers: [],

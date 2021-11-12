@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { EstoqueDePecasDetailsComponent } from './estoque-de-pecas-details/estoque-de-pecas-details.component';
 import { FichaclientesDetailsComponent } from './fichaclientes-details/fichaclientes-details.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 const routes: Routes =
@@ -25,7 +26,10 @@ const routes: Routes =
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    /* ToastrModule.forRoot() */
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,35 +1,70 @@
-<div class="container">
-  <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
-    <input type="hidden" name="estoqueDePecasId" [value]="service.formData.estoqueDePecasId"/>
-    <div class="form-group">
+<div class="container-fluid">
+  <form class="needs-validation" novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="estoqueDePecasId" [value]="service.formData.estoqueDePecasId" />
+
+    <div class="col-md-9 mb-2">
       <label>Marca</label>
-      <input class="form-control form-control-lg" placeholder="Full Name" name="Marca" #marca="ngModel"
-        [(ngModel)]="service.formData.marca" required [class.invalid]="marca.invalid && marca.touched">
+      <input class="form-control needs-validation form-control-lg" id="validationServer01" placeholder="Full Name"
+        name="Marca" #marca="ngModel" [(ngModel)]="service.formData.marca" required
+        [class.invalid]="marca.invalid && marca.touched" required minlength="2" maxlength="17">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Modelo</label>
-        <input class="form-control form-control-lg" placeholder="Modelo" name="Modelo" #modelo="ngModel"
-          [(ngModel)]="service.formData.modelo" [class.invalid]="modelo.invalid && modelo.touched">
+
+
+    <p></p>
+    <div class="col-md-9 mb-2">
+      <label>Modelo</label>
+      <input class="form-control needs-validation form-control-lg" id="validationServer02" placeholder="Modelo"
+        name="Modelo" #modelo="ngModel" [(ngModel)]="service.formData.modelo"
+        [class.invalid]="modelo.invalid && modelo.touched" required minlength="2" maxlength="17">
+      <div class="valid-feedback">
+        Looks good!
       </div>
-      <div class="form-group">
-        <label>Tipo</label>
-        <input class="form-control form-control-lg" placeholder="Full Name" name="Tipo" #tipo="ngModel"
-          [(ngModel)]="service.formData.tipo" required [class.invalid]="tipo.invalid && tipo.touched">
+    </div>
+
+    <div class="form-group col-md-9">
+      <label>Tipo</label>
+      <input class="form-control form-control-lg" placeholder="Full Name" id="validationServer03" name="Tipo" #tipo="ngModel"
+        [(ngModel)]="service.formData.tipo" required [class.invalid]="tipo.invalid && tipo.touched" required required
+        minlength="2" maxlength="17">
+      <div class="valid-feedback">
+        Looks good!
       </div>
+    </div>
+
+    <div class="row">
       <div class="form-group col-md-6">
         <label>Quantidade</label>
-        <input class="form-control form-control-lg" placeholder="Quantidade" name="Quantidade" #quantidade="ngModel"
-          [(ngModel)]="service.formData.quantidade" [class.invalid]="quantidade.invalid && quantidade.touched">
+        <input class="form-control form-control-lg" placeholder="Quantidade" id="validationServer04" name="Quantidade" #quantidade="ngModel"
+          [(ngModel)]="service.formData.quantidade" [class.invalid]="quantidade.invalid && quantidade.touched" required
+          minlength="1" maxlength="5">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
-      <div class="form-group col-md-6">
+
+      <div class="form-group col-md-5 md-4">
         <label>Valor</label>
-        <input class="form-control form-control-lg" placeholder="Valor" name="Valor" #Valor="ngModel"
-          [(ngModel)]="service.formData.valor" [class.invalid]="Valor.invalid && Valor.touched">
-      </div>
-      <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">R$</div>
+          </div>
+          <input class="form-control form-control-lg" placeholder="Valor" id="validationServer05" name="Valor" #Valor="ngModel"
+            [(ngModel)]="service.formData.valor" [class.invalid]="Valor.invalid && Valor.touched" required minlength="1"
+            maxlength="4">
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
       </div>
     </div>
+
+
+    <div class="form-group">
+      <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
   </form>
+  <p></p>
 </div>

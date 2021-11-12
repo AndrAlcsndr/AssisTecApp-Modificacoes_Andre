@@ -1,44 +1,77 @@
-<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
-  <input type="hidden" name="VendasId" [value]="service.formData.fichaClienteId" />
-  <div class="form-group">
+<app-tela-incial></app-tela-incial>
+<div class="container-fluid">
+  <form novalidate class="needs-validation" autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="VendasId" [value]="service.formData.fichaClienteId" />
+    <div class="form-group">
       <label>Nome</label>
-      <input class="form-control form-control-lg" placeholder="Digite nome cliente" name="nome"
-          #nome="ngModel" [(ngModel)]="service.formData.nome"
-          required [class.invalid]="nome.invalid && nome.touched">
-  </div>
-  <div class="form-group">
-      <label>Endereço</label>
-      <input class="form-control form-control-lg" placeholder="endereço" name="endereço"
-          #endereco="ngModel" [(ngModel)]="service.formData.endereco"
-               [class.invalid]="endereco.invalid && endereco.touched">
-  </div>
-  <div class="form-row">
-      <div class="form-group col-md-6">
-          <label>Telefone</label>
-          <input class="form-control form-control-lg" placeholder="telefone" name="telefone"
-              #telefone="ngModel" [(ngModel)]="service.formData.telefone"
-               [class.invalid]="telefone.invalid && telefone.touched">
+      <input class="form-control needs-validation form-control-lg" id="validationServer01"
+        placeholder="Digite o nome do cliente" name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome"
+        [class.invalid]="nome.invalid && nome.touched" required minlength="3" maxlength="15">
+      <div class="valid-feedback">
+        Looks good!
       </div>
-      <div class="form-group col-md-6">
-          <label>Produto</label>
-          <input class="form-control form-control-lg" placeholder="Produto" name="Produto"
-              #produto="ngModel" [(ngModel)]="service.formData.produto"
-               [class.invalid]="produto.invalid && produto.touched">
-      </div>
-      <div class="form-group col-md-6">
-          <label>Data</label>
-          <input class="form-control form-control-lg" placeholder="data" name="data"
-              #_data="ngModel" [(ngModel)]="service.formData._data"
-               [class.invalid]="_data.invalid && _data.touched">
-      </div>
-      <div class="form-group col-md-6">
-          <label>Valor</label>
-          <input class="form-control form-control-lg" placeholder="Valor" name="Valor"
-              #valor="ngModel" [(ngModel)]="service.formData.valor"
-               [class.invalid]="valor.invalid && valor.touched">
-      </div>
-  <div class="form-group">
-      <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
-  </div>
     </div>
-</form>
+
+    <div class="form-group">
+      <label>Endereço</label>
+      <input class="form-control form-control-lg" placeholder="Endereço" id="validationServer02" name="endereço"
+        #endereco="ngModel" [(ngModel)]="service.formData.endereco"
+        [class.invalid]="endereco.invalid && endereco.touched" required minlength="5" maxlength="60">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Telefone</label>
+        <input class="form-control form-control-lg" placeholder="Telefone" id="validationServer03" name="telefone"
+          #telefone="ngModel" [(ngModel)]="service.formData.telefone"
+          [class.invalid]="telefone.invalid && telefone.touched" required minlength="11" maxlength="15">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Produto</label>
+        <input class="form-control form-control-lg" placeholder="Produto" name="Produto" id="validationServer04"
+          #produto="ngModel" [(ngModel)]="service.formData.produto" [class.invalid]="produto.invalid && produto.touched"
+          required minlength="3" maxlength="20">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Data</label>
+        <input class="form-control form-control-lg" placeholder="Data" type="date" name="data" id="validationServer05"
+          #_data="ngModel" [(ngModel)]="service.formData._data" [class.invalid]="_data.invalid && _data.touched"
+          required minlength="8" maxlength="10">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Valor</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">R$</div>
+          </div>
+          <input class="form-control form-control-lg" placeholder="Valor" name="Valor" id="validationServer06"
+            #valor="ngModel" [(ngModel)]="service.formData.valor" [class.invalid]="valor.invalid && valor.touched"
+            required minlength="1" maxlength="10">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+      </div>
+    </div>
+  </form>

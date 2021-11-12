@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { User } from '../user';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +13,7 @@ import { User } from '../user';
 
 })
 export class LoginComponent implements OnInit {
+
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
 
@@ -21,11 +23,11 @@ export class LoginComponent implements OnInit {
   isSubmitted = false;
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group
+     this.loginForm = this.formBuilder.group
       (
         {
-          email: ["marcos", Validators.required],
-          password: ["123", Validators.required]
+          email: ["Flavio", Validators.required],
+          password: ["", Validators.required]
 
         });
   }
@@ -35,14 +37,21 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login() {
-    console.log(this.loginForm.value);
+  login (){
+    console.log (this.loginForm.value);
     this.isSubmitted = true;
-    if (this.loginForm.invalid) {
+    if (this.loginForm.invalid){
       return;
+
+
+    } else {
+      this.authService.login(this.loginForm.value);
+      this.router.navigateByUrl('/admin');
     }
-    this.authService.login(this.loginForm.value);
-    this.router.navigateByUrl('/admin');
+
+
   }
+
+
 
 }
