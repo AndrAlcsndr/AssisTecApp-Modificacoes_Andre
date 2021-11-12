@@ -41,7 +41,8 @@
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/pen2.js",
               "src/assets/pen3.js",
-              "src/assets/function.js"
+              "src/assets/alteraForms.js",
+              "src/assets/alterCampos.js"
 
             ]
           },

@@ -13,7 +13,7 @@
       <span class="tooltip">Pesquisar</span>
     </li>
     <li>
-      <a href="vendas-details">
+      <a onclick="alteraCampos();">
         <i class='bx bx-store-alt'></i>
         <span class="links_name">Vendas</span>
       </a>
@@ -22,9 +22,9 @@
     <li>
       <a href="estoque-pecas-details">
         <i class='bx bx-list-ul'></i>
-        <span class="links_name">Lista de Peças</span>
+        <span class="links_name">Estoque</span>
       </a>
-      <span class="tooltip">Peças</span>
+      <span class="tooltip">Estoque</span>
     </li>
     <li>
       <a href="fichaclientes--details">
@@ -47,13 +47,13 @@
       </a>
       <span class="tooltip">Calculadora</span>
     </li>
-    <li>
+    <!--  <li>
       <a href="#">
         <i class='bx bxs-group'></i>
         <span class="links_name">Administrador</span>
       </a>
       <span class="tooltip">Administrador</span>
-    </li>
+    </li> -->
   </ul>
   <div class="profile_content">
     <div class="profile">
@@ -67,14 +67,19 @@
       <li>
         <a id="btn_logout" (click)="logout()">
           <i class='bx bx-log-out-circle' id="log_out"></i>
-          <span class="links_name"(click)="logout()">Sair</span>
+          <span class="links_name" (click)="logout()">Sair</span>
         </a>
-        <span class="tooltip"(click)="logout()">Sair</span>
+        <span class="tooltip" (click)="logout()">Sair</span>
       </li>
     </div>
   </div>
 </div>
-
-<div class="home_content">
-  <div class="text">Home Content</div>
+<div class="container-vendas">
+  <app-vendas-details></app-vendas-details>
+</div>
+<div class="container-Estoque" onclick="" style="display: none">
+  <app-estoque-de-pecas></app-estoque-de-pecas>
+</div>
+<div class="container-ficha-clientes" onclick="" style="display: none">
+  <app-fichaclientes></app-fichaclientes>
 </div>

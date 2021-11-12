@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { VendasDetailService } from '../shared/vendas-detail.service';
 import { ToastrService } from 'ngx-toastr';
 import { VendasDetail } from '../shared/vendas-detail.model';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,9 +12,8 @@ import { VendasDetail } from '../shared/vendas-detail.model';
 })
 export class VendasDetailsComponent implements OnInit {
 
-
   constructor(public service: VendasDetailService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.service.refreshList();
